@@ -1,0 +1,11 @@
+
+
+1. Describe a way to use recursion to compute the sum of all the elements in an nxn (two-dimensional) array of integers.
+
+Take some matrix like
+{0, 1},
+{2, 3}
+
+We can recursively take the sums of each row (e.g. |{0, 1}| = 1). By the end of the row, we move onto the next row below and take that sum (e.g. |{2, 3}| = 5). Since it's recursive, we take the sums of both (1+ 5 = 6) and we have our sum. The terminal case must be the end of the matrix (in this case, it would be position (1, 1) where we would not make any recursive calls and simply return the number at that moment). The base case would be when we are summing up a row but not at the end of it. The special case is when we have to change rows when we are at the end of a row and start at the beginning of the row below.
+
+Since the last value of the matrix has to be known, the size of the array has to be passed throughout the array (matrix.length = col size and matrix[0].length = row size) and the current row and column has to be passed throughout the recursive function so we know where we are and what number to be incrementing.
